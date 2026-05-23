@@ -1,0 +1,408 @@
+/* *= generales, .= clases, # = ids  */ /* machete */ 
+/* NOSOTROS */
+
+:root  /* root nos permite reutilizar valores inicializados */
+{
+    --color-fondo: #0d0d15;
+    --color-primario: #7b2cbf;
+    --color-secundario: #c77dff;
+    --color-texto: #ffffff;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* --- BARRA DE NAVEGACIÓN --- */
+#navbar {
+    padding: 20px 5%;
+    display: flex;
+    justify-content: center; /* Centra toda la lista en la pantalla */
+    background-color: rgba(9, 9, 14, 0.8); /* Fondo oscuro transparente */
+    backdrop-filter: blur(8px); /* Efecto vidrio */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #7b2cbf; 
+}
+
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;       
+    flex-direction: row; /* izquierda a derecha */
+    gap: 30px;           
+}
+
+
+#navbar ul li {
+    margin: 0; 
+}
+
+
+#navbar ul li a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+#navbar ul li a:hover {
+    color: var(--color-primario); 
+    text-shadow: 0 0 10px rgba(179, 102, 255, 0.6); 
+}
+
+
+#header .logoheader {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+/* --- HEADER BANNER --- */
+#header  {
+    
+    background-image: linear-gradient(rgba(11, 9, 20, 0.6), rgba(11, 9, 20, 0.8)), url('./imgs/header/headerfondo.jpg');
+    background-size: cover;          
+    background-repeat: no-repeat;
+    
+    
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh; /* altura minima */
+}
+
+
+/* Título PERGAMING */
+#header  h2 {
+    color: var(--color-texto);
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 15px 0;
+}
+
+/* Subtítulo */
+#header  p {
+    color: var(--color-texto);
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Botón */
+#header  .btn {
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 50px; /* 50px garantiza que sea completamente óvalo */
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; /* Transiciones suaves para hover */
+    text-align: center;
+}
+
+/* Efecto Hover para el Botón */
+#header .btn:hover {
+    background-color: #9d4edd; 
+    transform: scale(1.05); 
+    box-shadow: 0 0 20px rgba(179, 102, 255, 0.6); 
+}
+#nos {
+    /*border-top: 1px solid #7b2cbf; /* creamos un borde, en este caso en  la parte de top, que separa la sección de "Nosotros" del resto de la página */
+    display: flex;
+    justify-content: center;
+}
+
+.nosotros-card {
+    background: #111;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 900px;
+    text-align: center;
+}
+
+.img-nos img {
+    width: 20%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#nos h2 {
+    color: var(--color-secundario);
+    margin-bottom: 10px;
+}
+
+#nos p {
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* ENVIOS */
+#envios {
+    text-align: center;
+    background: #0d0d15;
+    /*border-top: 1px solid #7b2cbf; */
+    /*border-bottom: 1px solid #7b2cbf; */
+}
+
+#envios h2 {
+    color: var(--color-secundario);
+}
+
+.cards-envios {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 30px 0;
+}
+
+.cards-envios img {
+    width: 15%;
+    filter: drop-shadow(0 0 10px #7b2cbf);
+}
+
+#envios p {
+    max-width: 800px;   
+    margin: 0 auto;     
+    text-align: center; 
+    line-height: 1.7;  
+    color: #ffffff;     
+    padding: 30px  ;  
+}
+
+/* contacto */
+#contacto {
+    background: #0d0d15;
+    /*border-top: 1px solid #7b2cbf;*/
+    padding: 30px 0;
+    border-bottom: 1px solid #7b2cbf;
+}
+
+#contacto h2 {
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#contacto {   
+    padding: 50px 30px;          
+    margin: 40px auto;           
+    text-align: center;          
+}
+
+
+
+#contacto p {
+    color: var(--color-texto)  ;              
+    font-size: 1rem;
+    line-height: 1.6;           
+    text-align: center;      
+    max-width: 800px; /* Limitamos el ancho del parrafo para mejorar la legibilidad */
+    margin: 0 auto 40px auto;    
+}
+
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;                   
+    max-width: 500px;            
+    margin: 0 auto;              
+}
+
+
+#contacto input, 
+#contacto textarea {
+    background-color: #1e1e1e;  
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 14px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+
+#contacto input:focus, 
+#contacto textarea:focus {
+    border-color: #a855f7;      
+}
+
+#contacto textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+
+#contacto button {
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#contacto button:hover {
+    background-color: #9d4edd; 
+    transform: scale(1.02); 
+    box-shadow: 0 0 15px rgba(179, 102, 255, 0.6); 
+}
+
+/* PRODUCTOS*/
+#productos {
+    border-top: 1px solid #7b2cbf;
+    padding: 30px 0;
+}
+#productos h2 {
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* fILTRO BUSQUEDAD */
+#filtros {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+#filtros select,
+#filtros input {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 10px;
+    color: var(--color-texto);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* --- FOOTER --- */
+#footer {
+    padding: 60px 6% 30px 6%;
+    
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-rows: auto auto; 
+    align-items: flex-start;
+    gap: 20px 40px; 
+}
+
+
+#footer .categorias {
+    grid-column: 1;
+    grid-row: 1; 
+}
+
+#footer .categorias h3 {
+    color: #9d4edd;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#footer .categorias ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer .categorias ul li {
+    margin-bottom: 10px;
+}
+
+#footer .categorias ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+#footer .categorias ul li a:hover {
+    opacity: 1;
+    color: #b366ff;
+}
+
+
+#footer > img {
+    grid-column: 2;
+    grid-row: 1; 
+    justify-self: center;
+    align-self: center;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+#footer .redes {
+    grid-column: 3;
+    grid-row: 1; 
+    text-align: right; 
+}
+
+#footer .redes h3 {
+    color: #9d4edd;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#footer .redes a {
+    display: inline-block;
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+#footer .redes a img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+#footer .redes a:hover {
+    transform: translateY(-4px);
+}
+
+
+#footer p {
+    grid-column: 1 / span 3; 
+    grid-row: 2; 
+    text-align: center;
+    color: #61616a;
+    font-size: 0.85rem;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #161224; 
+    width: 100%;
+}

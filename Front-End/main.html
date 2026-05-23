@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>                            <!-- cerebro del html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./logo/logocompleto.png"> <!-- favicon/ icono de la pestaña -->
+    <title>PERGAMING | Tu tienda de periféricos favorita</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- falta conectar el css y js -->
+</script>
+</head>
+<body>
+      
+    <!-- seccion nav/barra de  navegacion -->
+    <section id="navbar">
+            <ul>
+                <li><a href="#header">Inicio</a></li>
+                <li><a href="#nos">Sobre nosotros</a></li>
+                <li><a href="#envios">Envio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#">Carrito</a></li>
+            </ul>
+        </nav>
+    </section> 
+
+    <!-- seccion header/ lo primero que se ve -->
+    <section id="header">
+        <img src="./logo/logogrande.png" alt="logo de pergaming" class="logoheader">
+        <h1>PERGAMING</h1>
+        <p>Tu tienda de periféricos favorita</p>
+        <button class="btn">Comprar ahora</button> 
+    </section>
+
+
+    <!-- seccion nos-->
+    <section id="nos" data-aos="fade-up" >
+        <div class = "nosotros-card">
+            <div class="img-nos"> <img src="./imgs/nosotrosimg.png" alt="Sobre nosotros">
+            </div>
+        <h2>¿Quiénes somos?</h2>
+        <p>
+        Somos una tienda especializada en periféricos para gaming, comprometidos con ofrecer productos de alta calidad que potencien la experiencia de cada jugador. Nos enfocamos en brindar una selección cuidadosamente elegida de teclados, mouse, auriculares y accesorios diseñados para maximizar el rendimiento, la comodidad y la durabilidad.
+        Nuestro objetivo es acompañar tanto a jugadores casuales como competitivos, ofreciendo tecnología confiable, asesoramiento personalizado y atención dedicada en cada etapa de la compra. Creemos que cada detalle importa, por eso trabajamos constantemente para garantizar innovación, buenos precios y una experiencia de compra simple, segura y satisfactoria.
+        </p>
+        </div>
+    </section>
+
+    <!-- seccion envios -->
+    <section id="envios" data-aos="fade-up"> 
+        <h2>Envíos y seguros</h2>
+        <div class="cards-envios"> <!-- aca en css se le da un estilo de carta-->
+            <img src="./imgs/Envio.png" alt="envio">
+            <img src="./imgs/seguro.png" alt="seguro">
+        </div>
+        <p>
+        Ofrecemos envíos rápidos y seguros a todo el país, asegurándonos de que tu compra llegue en tiempo y forma, con el cuidado que tus productos merecen. Trabajamos con servicios logísticos confiables que nos permiten brindarte seguimiento de tu pedido en todo momento.
+        Además, contamos con envíos gratuitos en compras superiores a $100.000, para que puedas aprovechar al máximo tu inversión sin costos adicionales. Todos nuestros productos están respaldados por garantía, brindándote tranquilidad y confianza en cada compra. Nuestro compromiso es ofrecerte una experiencia de compra segura, eficiente y totalmente satisfactoria.
+        </p>
+    </section>
+
+    <!-- seccion productos -->
+    <section id="productos" data-aos="fade-up">
+    <h2>Productos</h2>
+
+    <!-- Filtros -->
+    <div id="filtros">
+    <select id="filtro-precio">
+        <option value="todos">Todos</option>
+        <option value="bajo">Menor a $10.000</option> <!-- modificamos el valor del 10.000, por otro, ademas de tocar en js  -->
+        <option value="alto">Mayor a $10.000</option>
+    </select>
+
+    <input type="text" id="busqueda" placeholder="Buscar producto..." />
+    </div>
+
+        <!-- Contenedor -->
+        <div id="lista-productos"><!-- aca el js hace el renderizado de productos del json--> </div>
+
+</section>
+    <!-- seccion contacto -->
+    <section id="contacto" data-aos="fade-up">
+        <h2>Contacto</h2>
+        <p>
+            ¿Tienes alguna pregunta? ¡Estamos aquí para ayudarte!
+            No dudes en ponerte en contacto con nosotros a través del siguiente formulario. Nuestro equipo de atención al cliente estará encantado de asistirte con cualquier consulta, sugerencia o inquietud que puedas tener. Valoramos tu opinión y estamos comprometidos a brindarte la mejor experiencia posible. </p>
+        <form action="">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- seccion footer -->
+    <footer id="footer">
+        <div class="categorias">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="#">Teclados</a></li>
+                <li><a href="#">Mouse</a></li>
+                <li><a href="#">Auriculares</a></li>
+                <li><a href="#">Accesorios</a></li>
+            </ul>
+        </div>
+        <img src="./logo/logocompleto.png" alt="logo de pergaming"> 
+        <p>&copy; 2026 PERGAMING. Todos los derechos reservados.</p> <!-- &copy; simbolo del copyright -->
+        <div class="redes">
+            <h3>Redes sociales</h3>
+            <a href="https://discord.gg/"><img src="./imgs/redes/discord.png" alt="discord"></a>
+            <a href="https://instagram.com/"><img src="./imgs/redes/instagram.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+    duration: 1200,
+    once: true,
+    easing: 'ease-out-cubic'
+  });
+</script>
+</body>
+</html>

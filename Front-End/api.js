@@ -1,0 +1,1 @@
+//encargado de hacer las peticiones a la api, como el fetch de los productos, el login, etc.
