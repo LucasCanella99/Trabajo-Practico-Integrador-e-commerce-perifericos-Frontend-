@@ -274,9 +274,58 @@ body {
     box-shadow: 0 0 15px rgba(179, 102, 255, 0.6); 
 }
 
+#categoria-cartas {
+padding: 60px 20px;
+background: var(--color-fondo);
+text-align: center;
+}
+
+/* TÍTULO */
+#categoria-cartas h2 {
+margin-bottom: 40px;
+color: var(--color-secundario);
+}
+
+/* CONTENEDOR */
+.contenedor-categorias {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+/* CARTAS */
+.categoria {
+width: 200px;
+height: 160px;
+background: var(--color-fondo);
+border-radius: 16px;
+padding: 20px;
+text-align: center;
+cursor: pointer;
+transition: all 0.25s ease;
+border: 1px solid var(--color-primario);
+}
+
+/* IMAGEN */
+.categoria img {
+width: 70px;
+margin-bottom: 15px;
+}
+
+/* TEXTO */
+.categoria p {
+font-size: 14px;
+font-weight: 600;
+color: var(--color-texto);
+letter-spacing: 1px;
+}
+.categoria:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
 /* PRODUCTOS*/
 #productos {
-    border-top: 1px solid #7b2cbf;
     padding: 30px 0;
 }
 #productos h2 {
