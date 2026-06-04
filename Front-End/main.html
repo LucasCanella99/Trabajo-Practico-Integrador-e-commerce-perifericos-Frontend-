@@ -1,156 +1,270 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>                            <!-- cerebro del html -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./logo/logocompleto.png"> <!-- favicon/ icono de la pestaña -->
-    <title>PERGAMING | Tu tienda de periféricos favorita</title>
-    <link rel="stylesheet" href="main.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- falta conectar el css y js -->
-</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./logo/logocompleto.png">
+  <title>PERGAMING | Tu tienda de periféricos favorita</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
 </head>
 <body>
-      
-    <!-- seccion nav/barra de  navegacion -->
-    <section id="navbar">
-            <ul>
-                <li><a href="#header">Inicio</a></li>
-                <li><a href="#nos">Sobre nosotros</a></li>
-                <li><a href="#envios">Envio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#">Carrito</a></li>
-            </ul>
-        </nav>
-    </section> 
 
-    <!-- seccion header/ lo primero que se ve -->
-    <section id="header">
-        <img src="./logo/logogrande.png" alt="logo de pergaming" class="logoheader">
-        <h1>PERGAMING</h1>
-        <p>Tu tienda de periféricos favorita</p>
-        <button class="btn">Comprar ahora</button> 
-    </section>
+  <section id="navbar">
+    <ul>
+      <li><a href="#header">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#" id="nav-login">Iniciar sesión</a></li>
+      <li><a href="#" id="nav-register">Registrarse</a></li>
+      <li style="position:relative;">
+        <a href="#" id="nav-carrito">Carrito <span id="carrito-badge"></span></a>
+      </li>
+      <li><a href="#" id="nav-ordenes">Mis órdenes</a></li>
+      <li><a href="#" id="nav-logout">Cerrar sesión</a></li>
+    </ul>
+  </section>
+
+  <section id="header">
+    <img src="./logo/logogrande.png" alt="logo de pergaming" class="logoheader logo-dinamico">
+    <h1>PERGAMING</h1>
+    <p>Tu tienda de periféricos favorita</p>
+    <button class="btn">Comprar ahora</button>
+  </section>
 
 
-    <!-- seccion nos-->
-    <section id="nos" data-aos="fade-up" >
-        <div class = "nosotros-card">
-            <div class="img-nos"> <img src="./imgs/nosotrosimg.png" alt="Sobre nosotros">
-            </div>
-        <h2>¿Quiénes somos?</h2>
-        <p>
-        Somos una tienda especializada en periféricos para gaming, comprometidos con ofrecer productos de alta calidad que potencien la experiencia de cada jugador. Nos enfocamos en brindar una selección cuidadosamente elegida de teclados, mouse, auriculares y accesorios diseñados para maximizar el rendimiento, la comodidad y la durabilidad.
-        Nuestro objetivo es acompañar tanto a jugadores casuales como competitivos, ofreciendo tecnología confiable, asesoramiento personalizado y atención dedicada en cada etapa de la compra. Creemos que cada detalle importa, por eso trabajamos constantemente para garantizar innovación, buenos precios y una experiencia de compra simple, segura y satisfactoria.
-        </p>
+  <section id="nuevo" data-aos="fade-up">
+    <h2> ¡Novedades! Mis productos favoritos</h2>
+    <div class="cards-nuevo">
+        <div class="card-nuevo">
+            <img src="./imgs/abbysgamingweb.webp" alt="Producto nuevo 1">
+            <h3>Glasspad Abbysgaming Lanyu</h3>
+            <p>Experimentá la precisión y velocidad de este Glasspad Abbysgaming Lanyu, diseñado para gamers exigentes que buscan rendimiento y estilo en cada partida.</p>      
         </div>
-    </section>
-
-    <!-- seccion envios -->
-    <section id="envios" data-aos="fade-up"> 
-        <h2>Envíos y seguros</h2>
-        <div class="cards-envios"> <!-- aca en css se le da un estilo de carta-->
-            <img src="./imgs/Envio.png" alt="envio">
-            <img src="./imgs/seguro.png" alt="seguro">
+        <div class="card-nuevo">
+            <img src="./imgs/gravastarweb.webp" alt="Producto nuevo 2">
+            <h3>Teclado Magnético Gravastar V60 PRO</h3>
+            <p>Experimentá la precisión y velocidad de este teclado magnético Gravastar V60 PRO, diseñado para gamers exigentes que buscan rendimiento y estilo en cada partida.</p>
         </div>
-        <p>
-        Ofrecemos envíos rápidos y seguros a todo el país, asegurándonos de que tu compra llegue en tiempo y forma, con el cuidado que tus productos merecen. Trabajamos con servicios logísticos confiables que nos permiten brindarte seguimiento de tu pedido en todo momento.
-        Además, contamos con envíos gratuitos en compras superiores a $100.000, para que puedas aprovechar al máximo tu inversión sin costos adicionales. Todos nuestros productos están respaldados por garantía, brindándote tranquilidad y confianza en cada compra. Nuestro compromiso es ofrecerte una experiencia de compra segura, eficiente y totalmente satisfactoria.
-        </p>
-    </section>
-
-    <!-- cartas de productos -->
-     <section id="categoria-cartas"  data-aos="fade-up">
-  <h2>Categorías</h2>
-
-  <div class="contenedor-categorias">
-
-    <div class="categoria" data-categoria="mouse">
-      <img src="./imgs/mouse.webp" alt="Mouse">
-      <p>MOUSE</p>
+        <div class="card-nuevo">
+            <img src="./imgs/mchosel7web.webp" alt="Producto nuevo 3">
+            <h3>Mouse Mchose L7 Pro</h3>
+            <p>Experimentá la precisión y velocidad de este mouse Mchose L7 Pro, diseñado para gamers exigentes que buscan rendimiento y estilo en cada partida.</p>
+        </div>
     </div>
+  </section>
 
-    <div class="categoria" data-categoria="teclados">
-      <img src="./imgs/teclado.webp" alt="Teclados">
-      <p>TECLADOS</p>
+  <section id="nos" data-aos="fade-up">
+    <div class="nosotros-card">
+      <div class="img-nos"><img src="./imgs/nosotrosimg.png" alt="Sobre nosotros"></div>
+      <h2>¿Quiénes somos?</h2>
+      <p>Somos una tienda especializada en periféricos para gaming, comprometidos con ofrecer productos de alta calidad que potencien la experiencia de cada jugador. Nos enfocamos en brindar una selección cuidadosamente elegida de teclados, mouse, auriculares y accesorios diseñados para maximizar el rendimiento, la comodidad y la durabilidad. Nuestro objetivo es acompañar tanto a jugadores casuales como competitivos, ofreciendo tecnología confiable, asesoramiento personalizado y atención dedicada en cada etapa de la compra.</p>
     </div>
+  </section>
 
-    <div class="categoria" data-categoria="mousepads">
-      <img src="./imgs/mousepad.webp" alt="Mousepads">
-      <p>MOUSEPADS</p>
+  <section id="envios" data-aos="fade-up">
+    <h2>Envíos y seguros</h2>
+    <div class="cards-envios">
+      <img src="./imgs/Envio.png" alt="envio">
+      <img src="./imgs/seguro.png" alt="seguro">
     </div>
+    <p>Ofrecemos envíos rápidos y seguros a todo el país. Trabajamos con servicios logísticos confiables que nos permiten brindarte seguimiento de tu pedido en todo momento. Envíos gratuitos en compras superiores a $100.000.</p>
+  </section>
 
-    <div class="categoria" data-categoria="auriculares">
-      <img src="./imgs/mousepad.webp" alt="Auriculares">
-      <p>MOUSEPADS</p>
+  <!-- Botonera grande de categorías (con imágenes) -->
+  <section id="categoria-cartas" data-aos="fade-up">
+    <h2>Categorías</h2>
+    <div class="contenedor-categorias">
+      <div class="categoria" data-categoria="mouse">
+        <img src="./imgs/mouse.webp" alt="Mouse"><p>MOUSE</p>
+      </div>
+      <div class="categoria" data-categoria="teclados">
+        <img src="./imgs/teclado.webp" alt="Teclados"><p>TECLADOS</p>
+      </div>
+      <div class="categoria" data-categoria="mousepads">
+        <img src="./imgs/mousepad.webp" alt="Mousepads"><p>MOUSEPADS</p>
+      </div>
+      <div class="categoria" data-categoria="auriculares">
+        <img src="./imgs/auricular.webp" alt="Auriculares"><p>AURICULARES</p>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-
-
-    <!-- seccion productos -->
-    <section id="productos" data-aos="fade-up">
+  <!-- Sección de productos con filtro select y buscador -->
+  <section id="productos" data-aos="fade-up">
     <h2>Productos</h2>
-
-    <!-- Filtros -->
     <div id="filtros">
-    <select id="filtro-precio">
-        <option value="todos">Todos</option>
-        <option value="bajo">Menor a $10.000</option> <!-- modificamos el valor del 10.000, por otro, ademas de tocar en js  -->
-        <option value="alto">Mayor a $10.000</option>
-    </select>
-
-    <input type="text" id="busqueda" placeholder="Buscar producto..." />
+      <select id="filtro-select">
+        <option value="">Todos los productos</option>
+        <option value="Mouse">Mouse</option>
+        <option value="Teclados">Teclados</option>
+        <option value="Mousepad">Mousepad</option>
+        <option value="Auriculares">Auriculares</option>
+      </select>
+      <input type="text" id="busqueda" placeholder="Buscar producto...">
     </div>
+    <div id="lista-productos"></div>
+  </section>
 
-        <!-- Contenedor -->
-        <div id="lista-productos"><!-- aca el js hace el renderizado de productos del json--> </div>
+  <section id="contacto" data-aos="fade-up">
+    <h2>Contacto</h2>
+    <p>¿Tenés alguna pregunta? ¡Estamos aquí para ayudarte! Nuestro equipo estará encantado de asistirte con cualquier consulta, sugerencia o inquietud.</p>
+    <form action="">
+      <input type="text"  placeholder="Nombre"             required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea           placeholder="Mensaje"            required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
-</section>
-    <!-- seccion contacto -->
-    <section id="contacto" data-aos="fade-up">
-        <h2>Contacto</h2>
-        <p>
-            ¿Tienes alguna pregunta? ¡Estamos aquí para ayudarte!
-            No dudes en ponerte en contacto con nosotros a través del siguiente formulario. Nuestro equipo de atención al cliente estará encantado de asistirte con cualquier consulta, sugerencia o inquietud que puedas tener. Valoramos tu opinión y estamos comprometidos a brindarte la mejor experiencia posible. </p>
-        <form action="">
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo electrónico" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+  <footer id="footer">
+    <div class="categorias">
+      <h3>Categorías</h3>
+      <ul>
+        <li><a href="">Teclados</a></li>
+        <li><a href="">Mouse</a></li>
+        <li><a href="">Auriculares</a></li>
+        <li><a href="">Accesorios</a></li>
+      </ul>
+    </div>
+    <img src="./logo/logocompleto.png" alt="logo de pergaming" class="logo-dinamico">
+    <p>&copy; 2026 PERGAMING. Todos los derechos reservados.</p>
+    <div class="redes">
+      <h3>Redes sociales</h3>
+      <a href="https://discord.gg/"><img src="./imgs/redes/discord.png" alt="discord"></a>
+      <a href="https://instagram.com/"><img src="./imgs/redes/instagram.png" alt="Instagram"></a>
+    </div>
+  </footer>
 
-    <!-- seccion footer -->
-    <footer id="footer">
-        <div class="categorias">
-            <h3>Categorías</h3>
-            <ul>
-                <li><a href="#">Teclados</a></li>
-                <li><a href="#">Mouse</a></li>
-                <li><a href="#">Auriculares</a></li>
-                <li><a href="#">Accesorios</a></li>
-            </ul>
+  <!-- MODALES -->
+  <div id="modal-login" class="modal">
+    <div class="modal-box">
+      <button class="btn-cerrar-modal">✕</button>
+      <h2>Iniciar sesión</h2>
+      <form id="form-login" class="modal-form">
+        <input id="login-username" type="text"     placeholder="Usuario"    required autocomplete="username">
+        <input id="login-password" type="password" placeholder="Contraseña" required autocomplete="current-password">
+        <button type="submit">Entrar</button>
+        <button type="button" class="modal-link" id="link-a-registro">¿No tenés cuenta? Registrate</button>
+        <button type="button" class="modal-link" id="link-reset-pw">¿Olvidaste tu contraseña?</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-register" class="modal">
+    <div class="modal-box">
+      <button class="btn-cerrar-modal">✕</button>
+      <h2>Crear cuenta</h2>
+      <form id="form-register" class="modal-form">
+        <input id="reg-username" type="text"     placeholder="Usuario"    required autocomplete="username">
+        <input id="reg-email"    type="email"    placeholder="Email"      required autocomplete="email">
+        <input id="reg-name"     type="text"     placeholder="Nombre"     required>
+        <input id="reg-lastname" type="text"     placeholder="Apellido"   required>
+        <input id="reg-password" type="password" placeholder="Contraseña" required autocomplete="new-password">
+        <input id="reg-password-confirm" type="password" placeholder="Confirmar Contraseña" required>
+        <hr style="border-color:#333; margin: 10px 0;">
+        <p style="color:#aaa; font-size:0.85rem; margin:0;">Preguntas de seguridad:</p>
+        <input id="reg-q1-answer" type="text" placeholder="¿Nombre de tu primera mascota?" required>
+        <input id="reg-q2-answer" type="text" placeholder="¿Ciudad donde naciste?" required>
+        <input id="reg-q3-answer" type="text" placeholder="¿Nombre de tu madre?" required>
+        <button type="submit" style="margin-top:10px;">Registrarse</button>
+        <button type="button" class="modal-link" id="link-a-login">¿Ya tenés cuenta? Iniciá sesión</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-recuperar-p1" class="modal">
+    <div class="modal-box">
+      <button class="btn-cerrar-modal">✕</button>
+      <h2>Recuperar contraseña</h2>
+      <p style="color:#aaa;font-size:.88rem;margin-bottom:16px;">Ingresá tu nombre de usuario para verificar tu identidad.</p>
+      <form id="form-recuperar-p1" class="modal-form">
+        <input id="rec-username" type="text" placeholder="Usuario" required>
+        <button type="submit">Siguiente</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-recuperar-p2" class="modal">
+    <div class="modal-box">
+      <button class="btn-cerrar-modal">✕</button>
+      <h2>Preguntas de seguridad</h2>
+      <form id="form-recuperar-p2" class="modal-form">
+        <p style="color:#fff; font-size: 0.9rem;">¿Nombre de tu primera mascota?</p>
+        <input id="rec-q1" type="text" required>
+        <p style="color:#fff; font-size: 0.9rem;">¿Ciudad donde naciste?</p>
+        <input id="rec-q2" type="text" required>
+        <p style="color:#fff; font-size: 0.9rem;">¿Nombre de tu madre?</p>
+        <input id="rec-q3" type="text" required>
+        <button type="submit">Verificar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-recuperar-p3" class="modal">
+    <div class="modal-box">
+      <button class="btn-cerrar-modal">✕</button>
+      <h2>Nueva contraseña</h2>
+      <form id="form-recuperar-p3" class="modal-form">
+        <input id="rec-newpassword" type="password" placeholder="Nueva contraseña" required>
+        <input id="rec-newpassword-confirm" type="password" placeholder="Confirmar nueva contraseña" required>
+        <button type="submit">Actualizar contraseña</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-carrito" class="modal">
+    <div class="modal-box modal-wide">
+      <button class="btn-cerrar-modal">✕</button>
+      <h2>🛒 Tu carrito</h2>
+      <div id="carrito-items"></div>
+      <div id="carrito-footer">
+        <div class="carrito-total-row">
+          <span>Total:</span>
+          <span id="carrito-total">$0</span>
         </div>
-        <img src="./logo/logocompleto.png" alt="logo de pergaming"> 
-        <p>&copy; 2026 PERGAMING. Todos los derechos reservados.</p> <!-- &copy; simbolo del copyright -->
-        <div class="redes">
-            <h3>Redes sociales</h3>
-            <a href="https://discord.gg/"><img src="./imgs/redes/discord.png" alt="discord"></a>
-            <a href="https://instagram.com/"><img src="./imgs/redes/instagram.png" alt="Instagram"></a>
-        </div>
-    </footer>
+        <button id="btn-checkout">Proceder al pago</button>
+      </div>
+    </div>
+  </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({
-    duration: 1200,
-    once: true,
-    easing: 'ease-out-cubic'
-  });
-</script>
+  <div id="modal-checkout" class="modal">
+    <div class="modal-box">
+      <button class="btn-cerrar-modal">✕</button>
+      <h2>Datos de Envío</h2>
+      <div id="checkout-info-bancaria"></div>
+      <form id="form-pago" class="modal-form">
+        <input id="shipping_name" type="text" placeholder="Nombre" required>
+        <input id="shipping_last_name" type="text" placeholder="Apellido" required>
+        <input id="shipping_email" type="email" placeholder="Correo electrónico" required>
+        <input id="shipping_address" type="text" placeholder="Dirección de envío" required>
+        <button type="submit">Confirmar compra</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-ordenes" class="modal">
+    <div class="modal-box modal-wide">
+      <button class="btn-cerrar-modal">✕</button>
+      <h2>📦 Mis órdenes</h2>
+      <div id="ordenes-lista"></div>
+    </div>
+  </div>
+
+  <div id="modal-cancelacion" class="modal">
+    <div class="modal-box">
+      <button class="btn-cerrar-modal">✕</button>
+      <h2>Cancelar Orden</h2>
+      <form id="form-cancelacion" class="modal-form">
+        <textarea id="cancelacion-motivo" placeholder="Por favor, contanos el motivo de la cancelación" required></textarea>
+        <button type="submit" style="background: #b91c1c;">Confirmar Cancelación</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1200, once: true, easing: 'ease-out-cubic' });</script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
