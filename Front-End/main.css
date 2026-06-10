@@ -1,6 +1,10 @@
 /* *= generales, .= clases, # = ids  */ /* machete */ 
 /* NOSOTROS */
 
+html{
+    scroll-behavior: smooth; /* Transición suave al hacer scroll */
+}
+
 :root  /* root nos permite reutilizar valores inicializados */
 {
     --color-fondo: #0d0d15;
@@ -256,6 +260,57 @@ body {
     line-height: 1.7;  
     color: #ffffff;     
     padding: 30px  ;  
+}
+/* seccion comprar */
+#comprar{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+#comprar h2 {
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+}
+#comprar p {
+    color: var(--color-texto);
+    line-height: 1.6;
+    max-width: 800px;
+    text-align: center;
+}
+
+#comprar img {
+    width: 200px;
+    margin-top: 30px;
+    filter: drop-shadow(0 0 10px #7b2cbf);
+}
+
+/* seccion garantia */
+#garantia{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+#garantia h2 {
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+}
+#garantia p {
+    color: var(--color-texto);
+    line-height: 1.6;
+    max-width: 800px;
+    text-align: center;
+}
+
+#garantia img {
+    width: 250px;
+    margin-top: 30px;
+    filter: drop-shadow(0 0 10px #7b2cbf);
 }
 
 /* contacto */
