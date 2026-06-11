@@ -370,9 +370,10 @@ async function renderMisOrdenes() {
                     <span class="orden-fecha">${o.created_at ? new Date(o.created_at).toLocaleDateString("es-AR") : ""}</span>
                 </div>
                 <div class="orden-envio">
-                    <strong>Método:</strong> ${o.delivery_method === 'retiro' ? 'Retiro en sucursal' : 'Envío a domicilio'}<br>
+                    <!-- MODIFICADO: Normalizamos a minúsculas con .toLowerCase() para evitar errores de case-sensitivity -->
+                    <strong>Método:</strong> ${o.delivery_method?.toLowerCase() === 'retiro' ? 'Retiro en sucursal' : 'Envío a domicilio'}<br>
                     <strong>A nombre de:</strong> ${o.shipping_name} ${o.shipping_last_name}
-                    ${o.delivery_method !== 'retiro' && o.shipping_address ? `<br><strong>Dirección:</strong> ${o.shipping_address}` : ''}
+                    ${o.delivery_method?.toLowerCase() !== 'retiro' && o.shipping_address ? `<br><strong>Dirección:</strong> ${o.shipping_address}` : ''}
                 </div>
                 <ul class="orden-items">
                     ${(o.items || []).map(i => `<li>${i.quantity} × ${i.product_name} — $${Number(i.price).toLocaleString("es-AR")}</li>`).join("")}
