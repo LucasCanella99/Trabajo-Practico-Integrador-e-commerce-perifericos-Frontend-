@@ -17,8 +17,9 @@ export function clearTokens() {
 }
 
 async function handle(res) {
-    // Si el token expiró, refrescar
-    if (res.status === 401) {
+    // Si el token expiró, refrescar — pero NO si estamos en el endpoint de login
+    const isLoginEndpoint = res.url && res.url.includes("/auth/login/");
+    if (res.status === 401 && !isLoginEndpoint) {
         const refresh = localStorage.getItem("refresh_token");
         if (refresh) {
             try {

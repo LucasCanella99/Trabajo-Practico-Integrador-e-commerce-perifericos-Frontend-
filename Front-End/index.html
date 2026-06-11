@@ -284,6 +284,40 @@
     </div>
   </div>
 
+  <!-- PANTALLA DE CARGA (Render cold start) -->
+  <div id="pantalla-carga" style="
+    position:fixed; inset:0; z-index:9999;
+    background:#0a0a0a;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:18px;
+  ">
+    <img src="./logo/logocompleto.png" alt="PERGAMING" style="width:180px; opacity:0.9;">
+    <div style="width:48px; height:48px; border:4px solid #2d2d2d; border-top-color:#7b2cbf; border-radius:50%; animation:pergaming-spin 0.9s linear infinite;"></div>
+    <p style="color:#aaa; font-size:0.9rem; letter-spacing:0.04em; text-align:center; max-width:280px; line-height:1.5;">
+      Estamos preparando los servidores,<br>esto puede tardar un minuto...
+    </p>
+  </div>
+  <style>
+    @keyframes pergaming-spin { to { transform: rotate(360deg); } }
+  </style>
+
+  <!-- MODAL VER MÁS PRODUCTO -->
+  <div id="modal-detalle-producto" class="modal">
+    <div class="modal-box modal-wide" style="max-width:560px;">
+      <button class="btn-cerrar-modal">✕</button>
+      <div id="detalle-producto-contenido" style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+        <img id="detalle-img" src="" alt="" style="max-height:280px; object-fit:contain; border-radius:8px; width:100%;" onerror="this.src='./imgs/mouse.webp'">
+        <div style="width:100%;">
+          <h2 id="detalle-nombre" style="margin:0 0 8px 0; font-size:1.25rem;"></h2>
+          <span id="detalle-precio" style="font-size:1.1rem; color:#7b2cbf; font-weight:bold; display:block; margin-bottom:12px;"></span>
+          <p id="detalle-descripcion" style="color:#ccc; font-size:0.95rem; line-height:1.6; white-space:pre-wrap;"></p>
+          <span id="detalle-stock" style="display:inline-block; margin-top:12px; font-size:0.85rem; color:#aaa;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ duration: 1200, once: true, easing: 'ease-out-cubic' });</script>
   <script type="module" src="main.js"></script>

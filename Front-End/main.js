@@ -113,6 +113,7 @@ function renderProductos(lista) {
                     ${p.stock > 0 ? `<input type="number" id="qty-${p.id}" value="1" min="1" max="${p.stock}" title="Cantidad">` : ""}
                     <button class="btn btn-agregar" data-id="${p.id}" ${p.stock === 0 ? "disabled" : ""}>${p.stock > 0 ? "Agregar" : "Sin stock"}</button>
                 </div>
+                <button class="btn-ver-mas" data-id="${p.id}" style="margin-top:8px; background:none; border:1px solid #7b2cbf; color:#7b2cbf; padding:5px 14px; border-radius:4px; cursor:pointer; font-size:0.82rem; width:100%;">Ver más</button>
             </div>
         </div>`).join("");
 
@@ -128,6 +129,20 @@ function renderProductos(lista) {
                 await actualizarContadorCarrito();
             } catch (e) { toast(e.message, "error"); }
             finally { spinnerOff(btn); }
+        });
+    });
+
+    cont.querySelectorAll(".btn-ver-mas").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const prod = productosCache.find(p => String(p.id) === String(btn.dataset.id));
+            if (!prod) return;
+            document.getElementById("detalle-img").src = prod.product_image || './imgs/mouse.webp';
+            document.getElementById("detalle-img").alt = prod.name;
+            document.getElementById("detalle-nombre").textContent = prod.name;
+            document.getElementById("detalle-precio").textContent = `$${Number(prod.price).toLocaleString("es-AR")}`;
+            document.getElementById("detalle-descripcion").textContent = prod.description || "Sin descripción.";
+            document.getElementById("detalle-stock").textContent = prod.stock > 0 ? `Stock disponible: ${prod.stock}` : "Sin stock";
+            abrirModal("modal-detalle-producto");
         });
     });
 }
@@ -433,7 +448,14 @@ async function manejarLogin(e) {
         actualizarNavbar();
         await actualizarContadorCarrito();
         toast(`Bienvenido, ${username} 👾`);
-    } catch (e) { toast(e.message || "Credenciales incorrectas.", "error"); }
+    } catch (e) {
+        const msg = e.message || "";
+        if (msg.toLowerCase().includes("locked") || msg.toLowerCase().includes("bloqueado") || msg.toLowerCase().includes("too many")) {
+            toast("Cuenta bloqueada temporalmente. Esperá unos minutos o comunicate mediante la ventana de contacto.", "error");
+        } else {
+            toast("Usuario o contraseña incorrectos. Intentá nuevamente.", "error");
+        }
+    }
     finally { spinnerOff(btn); }
 }
 
@@ -632,8 +654,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     actualizarNavbar();
     cargarAssets();
+    const pantallaCarga = document.getElementById("pantalla-carga");
+
     cargarCategorias().then(() => {
-        cargarProductos();
+        cargarProductos().then(() => {
+            if (pantallaCarga) pantallaCarga.style.display = "none";
+        }).catch(() => {
+            if (pantallaCarga) pantallaCarga.style.display = "none";
+        });
+    }).catch(() => {
+        if (pantallaCarga) pantallaCarga.style.display = "none";
     });
     if (isLoggedIn()) actualizarContadorCarrito();
 });
