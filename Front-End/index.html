@@ -255,11 +255,21 @@
       <button class="btn-cerrar-modal">✕</button>
       <h2>Datos de Envío</h2>
       <div id="checkout-info-bancaria"></div>
+      <!-- MODIFICADO: Formulario con selector de método de entrega y dirección opcional -->
       <form id="form-pago" class="modal-form">
         <input id="shipping_name" type="text" placeholder="Nombre" required>
         <input id="shipping_last_name" type="text" placeholder="Apellido" required>
         <input id="shipping_email" type="email" placeholder="Correo electrónico" required>
-        <input id="shipping_address" type="text" placeholder="Dirección de envío" required>
+        
+        <!-- NUEVO: Selector de método de entrega -->
+        <select id="delivery_method" required style="margin-bottom: 10px; padding: 10px; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px;">
+          <option value="envio">Envío a domicilio</option>
+          <option value="retiro">Retiro en local</option>
+        </select>
+        
+        <!-- MODIFICADO: Se quitó el "required" y se aclaró en el placeholder -->
+        <input id="shipping_address" type="text" placeholder="Dirección de envío (Opcional si es retiro)">
+        
         <button type="submit">Confirmar compra</button>
       </form>
     </div>

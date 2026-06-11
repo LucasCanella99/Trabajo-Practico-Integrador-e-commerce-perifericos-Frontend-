@@ -290,17 +290,28 @@ async function manejarConfirmarPago(e) {
     e.preventDefault();
     const btn  = e.target.querySelector("button[type=submit]");
     const el   = (id) => document.getElementById(id)?.value?.trim() || "";
+    
+    const method = el("delivery_method") || "envio";
+    
     const shippingData = {
         shipping_name:      el("shipping_name"),
         shipping_last_name: el("shipping_last_name"),
         shipping_email:     el("shipping_email"),
+        delivery_method:    method,
         shipping_address:   el("shipping_address"),
         transfer_confirmed: false,
     };
-    if (!shippingData.shipping_name || !shippingData.shipping_last_name || !shippingData.shipping_email || !shippingData.shipping_address) {
-        toast("Completá todos los datos de envío.", "warn");
+
+    if (!shippingData.shipping_name || !shippingData.shipping_last_name || !shippingData.shipping_email) {
+        toast("Completá todos los datos personales básicos.", "warn");
         return;
     }
+    
+    if (method === "envio" && !shippingData.shipping_address) {
+        toast("Completá tu dirección para el envío a domicilio.", "warn");
+        return;
+    }
+    
     spinnerOn(btn);
     try {
         const orden = await hacerCheckout(shippingData);
@@ -341,7 +352,6 @@ async function renderMisOrdenes() {
     cont.innerHTML = `<p class="cargando">Cargando pedidos...</p>`;
     try {
         let ordenes = await getMisOrdenes();
-        // ✅ ORDENAR: más recientes primero (fecha descendente)
         if (Array.isArray(ordenes) && ordenes.length) {
             ordenes.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
         }
@@ -360,7 +370,9 @@ async function renderMisOrdenes() {
                     <span class="orden-fecha">${o.created_at ? new Date(o.created_at).toLocaleDateString("es-AR") : ""}</span>
                 </div>
                 <div class="orden-envio">
-                    <strong>Envío a:</strong> ${o.shipping_name} ${o.shipping_last_name} — ${o.shipping_address}
+                    <strong>Método:</strong> ${o.delivery_method === 'retiro' ? 'Retiro en sucursal' : 'Envío a domicilio'}<br>
+                    <strong>A nombre de:</strong> ${o.shipping_name} ${o.shipping_last_name}
+                    ${o.delivery_method !== 'retiro' && o.shipping_address ? `<br><strong>Dirección:</strong> ${o.shipping_address}` : ''}
                 </div>
                 <ul class="orden-items">
                     ${(o.items || []).map(i => `<li>${i.quantity} × ${i.product_name} — $${Number(i.price).toLocaleString("es-AR")}</li>`).join("")}
@@ -601,7 +613,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("filtro-select")?.addEventListener("change", (e) => {
         filtrarPorCat(e.target.value);
     });
-    document.getElementById("busqueda")?.addEventListener("input", aplicarFiltros);
+
+    // Solución: debounce en la búsqueda
+    let timeoutBusqueda;
+    document.getElementById("busqueda")?.addEventListener("input", () => {
+        clearTimeout(timeoutBusqueda);
+        timeoutBusqueda = setTimeout(aplicarFiltros, 400); // Espera 400ms después de la última tecla
+    });
 
     // Botonera grande de categorías (imágenes)
     document.querySelectorAll("#categoria-cartas .categoria").forEach(card => {
