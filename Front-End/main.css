@@ -90,13 +90,17 @@ body {
 
 
 /* Título PERGAMING */
-#header  h2 {
+#header  h1 {
     color: var(--color-texto);
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 1px;
     margin: 15px 0;
+}
+
+#per-span {
+    color: var(--color-primario);
 }
 
 /* Subtítulo */
@@ -229,6 +233,32 @@ body {
     line-height: 1.6;
 }
 
+/*maps */
+
+
+#ubicacion {
+    text-align: center;
+}
+
+#ubicacion h2 {
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+}
+#ubicacion p {
+    color: var(--color-texto);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+#ubicacion .mapa img {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    border-radius: 20px;
+}
+
+
 /* ENVIOS */
 #envios {
     text-align: center;
@@ -318,7 +348,6 @@ body {
     background: #0d0d15;
     /*border-top: 1px solid #7b2cbf;*/
     padding: 30px 0;
-    border-bottom: 1px solid #7b2cbf;
 }
 
 #contacto h2 {
@@ -480,6 +509,101 @@ box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     transition: border-color 0.3s;
 }
 
+/* --- SECCIÓN FAQ  --- */
+#faq {
+    padding: 60px 20px;
+    background-color: var(--color-fondo);
+    text-align: center;
+}
+
+#faq h2 {
+    color: var(--color-secundario);
+    margin-bottom: 40px;
+}
+
+.contenedor-faq {
+    max-width: 1100px; 
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    text-align: left;
+}
+
+.faq-respuesta span {
+    color: var(--color-secundario);
+    font-weight: 600;
+}
+
+.faq-item {
+    background-color: #0b0f19; 
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+
+.faq-item[open] {
+    border-color: var(--color-primario);
+}
+
+
+.faq-pregunta {
+    padding: 18px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    cursor: pointer;
+    list-style: none; 
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+
+.faq-pregunta::after {
+    color: var(--color-secundario);
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+
+.faq-item[open] .faq-pregunta::after {
+    transform: rotate(90deg);
+}
+
+.faq-pregunta:hover {
+    background-color: #121826; /
+}
+
+
+.faq-respuesta {
+    padding: 0 24px 20px 24px;
+    background-color: #0b0f19;
+    animation: fadeDown 0.3s ease-out; 
+}
+
+.faq-respuesta p {
+    color: #94a3b8; 
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 /* --- FOOTER --- */
 #footer {
     padding: 60px 6% 30px 6%;
@@ -489,43 +613,20 @@ box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     grid-template-rows: auto auto; 
     align-items: flex-start;
     gap: 20px 40px; 
+    border-top: 1px solid #7b2cbf;
 }
 
 
-#footer .categorias {
-    grid-column: 1;
-    grid-row: 1; 
-}
-
-#footer .categorias h3 {
-    color: #9d4edd;
+#footer .correo h3{
+    color: var(--color-secundario);
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
-#footer .categorias ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
-#footer .categorias ul li {
-    margin-bottom: 10px;
-}
 
-#footer .categorias ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.95rem;
-    opacity: 0.8;
-    transition: opacity 0.3s ease, color 0.3s ease;
-}
 
-#footer .categorias ul li a:hover {
-    opacity: 1;
-    color: #b366ff;
-}
 
 
 #footer > img {
@@ -580,6 +681,7 @@ box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     border-top: 1px solid #161224; 
     width: 100%;
 }
+
 
 
 

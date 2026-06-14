@@ -10,7 +10,7 @@
   
 </head>
 <body>
-
+ <!-- barra navegacion -->
   <section id="navbar">
     <ul>
       <li><a href="#header">Inicio</a></li>
@@ -25,36 +25,38 @@
       <li><a href="#" id="nav-logout">Cerrar sesión</a></li>
     </ul>
   </section>
-
+<!-- header. lo primero que ver el user -->
   <section id="header">
     <img src="./logo/logogrande.png" alt="logo de pergaming" class="logoheader logo-dinamico">
-    <h1>PERGAMING</h1>
+    <h1>
+      <span id="per-span">PER</span>GAMING  <!-- separamos con span para agregarle color a esa parte-->
+    </h1>
     <p>Tu tienda de periféricos favorita</p>
     <button class="btn">Comprar ahora</button>
   </section>
 
-
+<!-- cartas (nuevos productos) -->
   <section id="nuevo" data-aos="fade-up">
-    <h2> ¡Novedades! Mis productos favoritos</h2>
+    <h2> Productos Destacados</h2>
     <div class="cards-nuevo">
         <div class="card-nuevo">
             <img src="./imgs/abbysgamingweb.webp" alt="Producto nuevo 1">
             <h3>Glasspad Abbysgaming Lanyu</h3>
-            <p>Experimentá la precisión y velocidad de este Glasspad Abbysgaming Lanyu, diseñado para gamers exigentes que buscan rendimiento y estilo en cada partida.</p>      
+            <p>Glasspad Abbysgaming Lanyu, A diferencia de otros modelos de la marca que priorizan el control o el equilibrio, el Lanyu se posiciona como una opción enfocada puramente en la velocidad, similar a un "Phantom" pero con características propias de la marca. </p>      
         </div>
         <div class="card-nuevo">
             <img src="./imgs/gravastarweb.webp" alt="Producto nuevo 2">
             <h3>Teclado Magnético Gravastar V60 PRO</h3>
-            <p>Experimentá la precisión y velocidad de este teclado magnético Gravastar V60 PRO, diseñado para gamers exigentes que buscan rendimiento y estilo en cada partida.</p>
+            <p>Experimentá la precisión y velocidad de este teclado magnético Gravastar V60 PRO, diseñado para gamers exigentes que buscan rendimiento, Posicionado como una opción de alto rendimiento para competidores, ofrece una velocidad de respuesta extrema gracias a su tasa de sondeo de 8000 Hz y una latencia ultrabaja de 0.125 ms. </p>
         </div>
         <div class="card-nuevo">
             <img src="./imgs/mchosel7web.webp" alt="Producto nuevo 3">
             <h3>Mouse Mchose L7 Pro</h3>
-            <p>Experimentá la precisión y velocidad de este mouse Mchose L7 Pro, diseñado para gamers exigentes que buscan rendimiento y estilo en cada partida.</p>
+            <p>Experimentá la precisión y velocidad de este mouse Mchose L7 Pro, Su característica más notable es la capacidad de operar a una tasa de sondeo (polling rate) de 8000 Hz tanto en modo inalámbrico (2.4 GHz) como por cable, garantizando una latencia de movimiento extremadamente baja (alrededor de 0.9 ms de retraso en pruebas independientes).</p>
         </div>
     </div>
   </section>
-
+<!-- seccion nos -->
   <section id="nos" data-aos="fade-up">
     <div class="nosotros-card">
       <div class="img-nos"><img src="./imgs/nosotrosimg.png" alt="Sobre nosotros"></div>
@@ -62,17 +64,25 @@
       <p>Somos una tienda especializada en periféricos para gaming, comprometidos con ofrecer productos de alta calidad que potencien la experiencia de cada jugador. Nos enfocamos en brindar una selección cuidadosamente elegida de teclados, mouse, auriculares y accesorios diseñados para maximizar el rendimiento, la comodidad y la durabilidad. Nuestro objetivo es acompañar tanto a jugadores casuales como competitivos, ofreciendo tecnología confiable, asesoramiento personalizado y atención dedicada en cada etapa de la compra.</p>
     </div>
   </section>
-
+  <!-- Ubicacion -->
+  <section id="ubicacion" data-aos="fade-up">
+    <h2>Ubicación</h2>
+    <div class="mapa">
+      <img src="./imgs/ubift.webp" alt="Mapa de ubicación">
+    </div>
+    <p>Nos   Encontramos ubicados en Amenedo 1730, Adrogue, Buenos Aires.</p>
+  </section>
+<!-- Envios -->
   <section id="envios" data-aos="fade-up">
     <h2>Envíos y seguros</h2>
     <div class="cards-envios">
       <img src="./imgs/Envio.png" alt="envio">
       <img src="./imgs/seguro.png" alt="seguro">
     </div>
-    <p>Ofrecemos envíos rápidos y seguros a todo el país. Trabajamos con servicios logísticos confiables que nos permiten brindarte seguimiento de tu pedido en todo momento. Envíos gratuitos en compras superiores a $100.000.</p>
+    <p>Ofrecemos envíos rápidos y seguros a todo el país. Trabajamos con servicios logísticos confiables que nos permiten brindarte seguimiento de tu pedido en todo momento. Envíos gratuitos en compras superiores a $35.000.</p>
   </section>
 
-
+  <!-- como comprar -->
   <section id="comprar" data-aos="fade-up">
     <h2>Cómo comprar</h2>
     <img src="./imgs/compraicon.webp" alt="compra">
@@ -84,6 +94,7 @@
       <li>Completa la información de envío y pago.</li>
       <li>Recibe confirmación de tu compra y sigue el proceso de envío.</li>
     </ol>
+    <p>Recorda que tenes 24 horas para transferir, de lo contrario tu pedido será cancelado.</p>
   </section>
 
 
@@ -122,12 +133,15 @@
     <div id="lista-productos"></div>
   </section>
 
+<!-- Sección de garantía -->
+
   <section id="garantia" data-aos="fade-up">
     <h2>Garantía y devoluciones</h2>
     <img src="./imgs/garantiaicon.webp" alt="garantia">
     <p>En PERGAMING, Nos gusta brindar el mejmor servicio posible. Ofrecemos una garantía de 3 meses en todos nuestros productos. Si tu producto presenta algún defecto de fabricación, podrás solicitar una devolución o cambio dentro del período de garantía. Para iniciar el proceso, contáctanos a través de nuestro formulario de contacto o por correo electrónico con tu número de orden y una descripción del problema.</p>
   </section>
 
+<!-- Sección de contacto -->
   <section id="contacto" data-aos="fade-up">
     <h2>Contacto</h2>
     <p>¿Tenés alguna pregunta? ¡Estamos aquí para ayudarte! Nuestro equipo estará encantado de asistirte con cualquier consulta, sugerencia o inquietud.</p>
@@ -139,21 +153,68 @@
     </form>
   </section>
 
-  <footer id="footer">
-    <div class="categorias">
-      <h3>Categorías</h3>
-      <ul>
-        <li><a href="">Teclados</a></li>
-        <li><a href="">Mouse</a></li>
-        <li><a href="">Auriculares</a></li>
-        <li><a href="">Accesorios</a></li>
-      </ul>
+<!-- SECCION PREGUNTAS Y RESPUESTAS -->
+  <section id="faq" data-aos="fade-up">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="contenedor-faq">
+
+        <details class="faq-item">
+            <summary class="faq-pregunta">¿Cuáles son los métodos de pago?</summary>
+            <div class="faq-respuesta">
+                <p>Por el momento solo aceptamos transferencia bancaria</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-pregunta">¿Hacen envíos a todo el país?</summary>
+            <div class="faq-respuesta">
+                <p>Sí, hacemos envíos a toda la Argentina a través de Correo Argentino y Andreani.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-pregunta">¿Los productos tienen garantía?</summary>
+            <div class="faq-respuesta">
+                <p>Todos nuestros periféricos y glasspads cuentan con 3 meses de garantía oficial por cualquier falla de fábrica.</p>
+            </div>
+        </details>
+
+          <details class="faq-item">
+            <summary class="faq-pregunta">¿Tienen devoluciones?</summary>
+            <div class="faq-respuesta">
+                <p>Sí, ofrecemos devoluciones dentro de los 7 días posteriores a la compra, siempre que el producto esté en su estado original.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-pregunta">¿Qué pasa si no llego a los $35.000?</summary>
+            <div class="faq-respuesta">
+                <p>Si no llegas al monto mínimo de <span>$35.000</span>, se te cobrará un costo adicional de envío dependiendo la zona e incluso podes pasar a retirar a nuestro local. Si elegiste el envío y no llegas al envío gratis. Se te enviará un mail con el monto adicional, una vez transferido envíalo a <span>pergamingventas@gmail.com</span>. </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-pregunta">¿Qué día trabajan?</summary>
+            <div class="faq-respuesta">
+                <p>Trabajamos de lunes a viernes de 9:00 a 18:00 horas.</p>
+            </div>
+        </details>
+
     </div>
+  </section>
+
+  <footer id="footer">
+    <div class="correo">
+      <h3>Contacto</h3>
+      <span>pergamingventas@gmail.com</span> 
+    </div>
+
     <img src="./logo/logocompleto.png" alt="logo de pergaming" class="logo-dinamico">
     <p>&copy; 2026 PERGAMING. Todos los derechos reservados.</p>
     <div class="redes">
       <h3>Redes sociales</h3>
-      <a href="https://discord.gg/"><img src="./imgs/redes/discord.png" alt="discord"></a>
+      <a href="https://www.facebook.com/people/Pergaming/61591020891123/"><img src="./imgs/redes/facebook.webp" alt="Facebook"></a>
+      <a href="https://discord.gg/fb2e8Wy9wj"><img src="./imgs/redes/discord.png" alt="discord"></a>
       <a href="https://instagram.com/"><img src="./imgs/redes/instagram.png" alt="Instagram"></a>
     </div>
   </footer>
